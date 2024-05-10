@@ -18,10 +18,10 @@ function App() {
 
   const formatTime = (time) => {
     let minutes = Math.floor(time / 60);
-    let seconds = Math.floor(time % 60);
-    minutes = minutes < 10 ? "0" + minutes : minutes;
+    let seconds =time % 60;
+    // minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
-    return minutes + ":" + seconds;
+    return `${minutes}:${seconds}`
   };
 
   const startStop=()=>{
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <h1>Stopwatch</h1>
-      <p>Time:{formatTime(time)}</p>
+      <p>Time: {formatTime(time)}</p>
       <button onClick={startStop}>{isRunning ? "Stop" : "Start"}</button>
       <button onClick={reset}>Reset</button>
     </div>
